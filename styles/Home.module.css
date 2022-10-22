@@ -124,6 +124,10 @@
     background: #111;
   }
   .logo img {
-    filter: invert(1);
+     display:none;
   }
+}
+
+.footerimg{ 
+  display: block;
 }
