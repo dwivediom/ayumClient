@@ -27,8 +27,8 @@ const GetDoctor = () => {
   return (
     <>
 
-      <div className='   lg:grid  md:gird-cols-2  lg:grid-cols-4 gap-4'>
-     {getDoctor.doctor&&  getDoctor.doctor.map((doctor)=>{
+      <div className='  grid  md:grid-cols-2  lg:grid-cols-4 gap-4'>
+     {getDoctor.doctor&&  getDoctor.doctor.slice(0).reverse().map((doctor)=>{
              console.log('doctor',doctor)
            return( <Doctor key={doctor._id} name={doctor.doctor.name} 
             
