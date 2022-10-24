@@ -5,8 +5,9 @@
     "scope": "/",
     "start_url": "/",
     "name": "Ayum",
-    "short_name": "Ayum ",
-    "description": "health is just one click away ",
+    "short_name": "Ayum",
+    "description": "health is just one clickaway",
+    "orientation": "portrait-primary",
     "icons": [
         {
             "src": "/icon-192x192.png",
