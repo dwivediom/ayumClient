@@ -27,11 +27,20 @@ const GetDoctor = () => {
   return (
     <>
 
-      
+      <div className='   lg:grid  md:gird-cols-2  lg:grid-cols-4 gap-4'>
      {getDoctor.doctor&&  getDoctor.doctor.map((doctor)=>{
-           return( <Doctor key={doctor._id}/>)
+             console.log('doctor',doctor)
+           return( <Doctor key={doctor._id} name={doctor.doctor.name} 
+            
+                        specialist={doctor.specialist}
+                        location={doctor.location}
+                        phone={doctor.doctor.phone}
+                        fees={doctor.fees}
+                        timing={doctor.timing}
+
+            />)
      })}
-  
+      </div>
      
     
     </>
