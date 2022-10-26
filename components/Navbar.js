@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Script from 'next/script'
 import logo from '../public/ayumTranparent.png'
 import { bgSecColor, bgPriColor } from './theam/theam'
-
+import Link from 'next/link'; 
 
 const Navbar = () => {
   const [profile , setprofile ]= useState(false)
@@ -110,6 +110,8 @@ const Navbar = () => {
             <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
             <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
             <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+          <Link href='/DocRegistr'><a  className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Doctor Registration</a></Link> 
+          <Link href='/DocLogin'><a  className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Doctor Login</a></Link> 
           </div>}
         </div>
       </div>

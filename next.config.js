@@ -23,5 +23,10 @@ const withPWA = require("next-pwa")({
 const nextConfig = withPWA({
   reactStrictMode: true,
     swcMinify: true,
+    env: {
+      Bport:'http://localhost:5000',
+    }
+
+
 });
 module.exports = nextConfig;

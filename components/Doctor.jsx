@@ -5,7 +5,7 @@ const Doctor = (props) => {
   return (
     <div className='mt-4'><div class="p-6 max-w-sm  rounded-lg border border-cyan-700 shadow-md bg-gray-800 light:border-gray-700">
     <a href="#">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Dr.{name} </h5>
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{name} </h5>
         <h6 className='text-gray-100  border-solid inline p-1 border-cyan-500/40 rounded-full   border-[1px] ' > <span className='m-1' >{specialist}</span> </h6>
     </a>
     <div className='mt-2 '> <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">

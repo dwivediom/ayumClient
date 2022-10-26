@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import GetDoctor from '../comonents/GetDoctor'
-import Navbar from '../comonents/Navbar'
-import QuickSearch from '../comonents/QuickSearch'
-import SearchBox from '../comonents/SearchBox'
+import GetDoctor from '../components/GetDoctor'
+import Navbar from '../components/Navbar'
+import QuickSearch from '../components/QuickSearch'
+import SearchBox from '../components/SearchBox'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
