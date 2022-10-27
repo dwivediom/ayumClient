@@ -56,23 +56,23 @@ const DocResgistration = () => {
     <div>
  <form className='m-2' >
  <div class="mb-6">
-      <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your name</label>
+      <label  htmlFor="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your name</label>
       <input value={data.name} onChange={(e)=>handlechange(e)} type="text" id="name" name='name' class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" placeholder="Your name " required/>
     </div>
 
     <div class="mb-6">
-      <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
+      <label  htmlFor="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
       <input value={data.email} onChange={(e)=>handlechange(e)} type="email" id="email" name='email' class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" placeholder="name@flowbite.com" required/>
     </div>
 
     <div class="mb-6">
-      <label for="number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your Phone </label>
+      <label  htmlFor="number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your Phone </label>
       <input value={data.phone} onChange={(e)=>handlechange(e)} type="number" id="phone" name='phone' class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" placeholder="name@flowbite.com" required/>
     </div>
    
 
     <div class="mb-6">
-      <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your password</label>
+      <label  htmlFor="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your password</label>
       <input value={data.password}onChange={(e)=>handlechange(e)} type="password" id="password" name='password' class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" required/>
     </div>
     <div className='grid grid-cols-2 gap-1'>
@@ -80,7 +80,7 @@ const DocResgistration = () => {
       <div class="flex items-center h-5">
         <input id="remember" type="checkbox" value="" class="w-4 h-4 text-cyan-600 bg-gray-100 border-gray-300 focus:ring-cyan-500 dark:focus:ring-cyan-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
       </div>
-      <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
+      <label  htmlFor="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
     </div>
     
     <div class="flex items-start mb-6">
