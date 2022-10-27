@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router';
 import { doctorLogin } from '../../pages/api/DoctorApi/DocApi';
 import axios from 'axios';
 
@@ -7,6 +8,7 @@ import axios from 'axios';
 
 
 const DocLogin = () => {
+  const router =  useRouter()
    
 
   const url=`http://localhost:5000/api/doctor/login`; 
@@ -35,6 +37,10 @@ const submit= async (e)=>{
        })
        
        setresponce1(docdata)
+        if(docdata.status==200){
+           router.push('/createDocProfile')
+        }
+
        console.log(response1)
 
    }catch(err){

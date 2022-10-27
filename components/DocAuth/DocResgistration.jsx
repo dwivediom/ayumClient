@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { bgPriColor } from '../theam/theam'
 import { doctorRegister } from '../../pages/api/DoctorApi/DocApi'
 import axios from 'axios'
@@ -7,6 +8,7 @@ import { Port } from '../../pages/api/Mainport'
 
 
 const DocResgistration = () => {
+   const router= useRouter()
    const url=`http://localhost:5000/api/doctor/register`; 
    const [error, seterror]=useState('')
    const [response, setresponce]=useState('')
@@ -33,10 +35,18 @@ const DocResgistration = () => {
         
         setresponce(docdata)
         console.log(response)
-
+        localStorage.setItem('token', response.data.token);
+      
+        if(docdata.status==200){ 
+          router.push('/createDocProfile')
+        }
+       
     }catch(err){
-           console.log(err.response.data.error)
-           seterror(err.response.data.error)
+           console.log(err.response)
+           if(err.response){
+            seterror(err.response.data.error)
+           }
+          
     }
     
    
@@ -55,58 +65,58 @@ const DocResgistration = () => {
   return (
     <div>
  <form className='m-2' >
- <div class="mb-6">
-      <label  htmlFor="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your name</label>
-      <input value={data.name} onChange={(e)=>handlechange(e)} type="text" id="name" name='name' class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" placeholder="Your name " required/>
+ <div className="mb-6">
+      <label  htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your name</label>
+      <input value={data.name} onChange={(e)=>handlechange(e)} type="text" id="name" name='name' className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" placeholder="Your name " required/>
     </div>
 
-    <div class="mb-6">
-      <label  htmlFor="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
-      <input value={data.email} onChange={(e)=>handlechange(e)} type="email" id="email" name='email' class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" placeholder="name@flowbite.com" required/>
+    <div className="mb-6">
+      <label  htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
+      <input value={data.email} onChange={(e)=>handlechange(e)} type="email" id="email" name='email' className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" placeholder="name@flowbite.com" required/>
     </div>
 
-    <div class="mb-6">
-      <label  htmlFor="number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your Phone </label>
-      <input value={data.phone} onChange={(e)=>handlechange(e)} type="number" id="phone" name='phone' class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" placeholder="name@flowbite.com" required/>
+    <div className="mb-6">
+      <label  htmlFor="number" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your Phone </label>
+      <input value={data.phone} onChange={(e)=>handlechange(e)} type="number" id="phone" name='phone' className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" placeholder="name@flowbite.com" required/>
     </div>
    
 
-    <div class="mb-6">
-      <label  htmlFor="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your password</label>
-      <input value={data.password}onChange={(e)=>handlechange(e)} type="password" id="password" name='password' class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" required/>
+    <div className="mb-6">
+      <label  htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your password</label>
+      <input value={data.password}onChange={(e)=>handlechange(e)} type="password" id="password" name='password' className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" required/>
     </div>
     <div className='grid grid-cols-2 gap-1'>
-    <div class="flex items-start mb-6">
-      <div class="flex items-center h-5">
-        <input id="remember" type="checkbox" value="" class="w-4 h-4 text-cyan-600 bg-gray-100 border-gray-300 focus:ring-cyan-500 dark:focus:ring-cyan-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+    <div className="flex items-start mb-6">
+      <div className="flex items-center h-5">
+        <input id="remember" type="checkbox" value="" className="w-4 h-4 text-cyan-600 bg-gray-100 border-gray-300 focus:ring-cyan-500 dark:focus:ring-cyan-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
       </div>
-      <label  htmlFor="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
+      <label  htmlFor="remember" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
     </div>
     
-    <div class="flex items-start mb-6">
-      <div class="flex items-center h-5">
-        <input  onChange={(e)=>handlechange(e)} name='hospital' type="radio" value="gov hospital" class="w-4 h-4 text-cyan-600 bg-gray-100 border-gray-300 focus:ring-cyan-500 dark:focus:ring-cyan-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" required/>
+    <div className="flex items-start mb-6">
+      <div className="flex items-center h-5">
+        <input  onChange={(e)=>handlechange(e)} name='hospital' type="radio" value="gov hospital" className="w-4 h-4 text-cyan-600 bg-gray-100 border-gray-300 focus:ring-cyan-500 dark:focus:ring-cyan-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" required/>
       </div>
-      <label  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"> Government hospital </label>
+      <label  className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"> Government hospital </label>
     </div>
        
-    <div class="flex items-start mb-6">
-      <div class="flex items-center h-5">
-        <input onChange={(e)=>handlechange(e)} name='hospital' type="radio" value="clinic" class="w-4 h-4 text-cyan-600 bg-gray-100 border-gray-300 focus:ring-cyan-500 dark:focus:ring-cyan-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" required/>
+    <div className="flex items-start mb-6">
+      <div className="flex items-center h-5">
+        <input onChange={(e)=>handlechange(e)} name='hospital' type="radio" value="clinic" className="w-4 h-4 text-cyan-600 bg-gray-100 border-gray-300 focus:ring-cyan-500 dark:focus:ring-cyan-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" required/>
       </div>
-      <label  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"> Clinic </label>
+      <label  className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"> Clinic </label>
     </div>
 
-    <div class="flex items-start mb-6">
-      <div class="flex items-center h-5">
-        <input autoComplete='off' onChange={(e)=>handlechange(e)} name='hospital' type="radio" value="private hospital" class="w-4 h-4 text-cyan-600 bg-gray-100 border-gray-300 focus:ring-cyan-500 dark:focus:ring-cyan-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" required/>
+    <div className="flex items-start mb-6">
+      <div className="flex items-center h-5">
+        <input autoComplete='off' onChange={(e)=>handlechange(e)} name='hospital' type="radio" value="private hospital" className="w-4 h-4 text-cyan-600 bg-gray-100 border-gray-300 focus:ring-cyan-500 dark:focus:ring-cyan-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" required/>
       </div>
-      <label  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"> Private hospital </label>
+      <label  className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"> Private hospital </label>
     </div>
  
     </div>
               
-    <button type="submit" onClick={(e)=>submit(e)} class="text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800">Submit</button>
+    <button type="submit" onClick={(e)=>submit(e)} className="text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800">Submit</button>
   </form>
 
 
