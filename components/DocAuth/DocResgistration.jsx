@@ -35,9 +35,9 @@ const DocResgistration = () => {
         
         setresponce(docdata)
         console.log(response)
-        localStorage.setItem('token', response.data.token);
-      
-        if(docdata.status==200){ 
+        localStorage.setItem('doctoken', docdata.data.token);
+               console.log(localStorage.token)
+        if(localStorage.token){ 
           router.push('/createDocProfile')
         }
        

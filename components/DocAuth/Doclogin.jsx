@@ -37,7 +37,8 @@ const submit= async (e)=>{
        })
        
        setresponce1(docdata)
-        if(docdata.status==200){
+        localStorage.setItem('doctoken', docdata.data.token)
+        if(localStorage.doctoken){
            router.push('/createDocProfile')
         }
 
