@@ -94,7 +94,7 @@ const CreateDocProfile = () => {
     </div>
     <div className="mb-6">
       <label   htmlFor="website" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your website</label>
-      <input type="text"onChange={(e)=>handlechange(e)} id="website" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" r/>
+      <input type="text"onChange={(e)=>handlechange(e)} id="website" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" />
     </div>
     
 

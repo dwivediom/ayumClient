@@ -1,5 +1,5 @@
 import React from 'react'
-import Doclogin from '../components/DocAuth/Doclogin'
+import Doclogin from '../../components/DocAuth/Doclogin'
 const DocLogin = () => {
   return (
      <>

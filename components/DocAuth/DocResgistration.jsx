@@ -9,7 +9,7 @@ import { Port } from '../../pages/api/Mainport'
 
 const DocResgistration = () => {
    const router= useRouter()
-   const url=`http://localhost:5000/api/doctor/register`; 
+   const url=`${process.env.NEXT_PUBLIC_B_PORT}/api/doctor/register`; 
    const [error, seterror]=useState('')
    const [response, setresponce]=useState('')
   const [data , setdata]=useState({
@@ -17,7 +17,8 @@ const DocResgistration = () => {
      email:'',
      phone:'',
      password:"",
-     hospital:''
+     hospital:'',
+     city:''
 
   })
 
@@ -30,15 +31,16 @@ const DocResgistration = () => {
             email:data.email, 
             phone:data.phone, 
             password:data.password, 
-            hospital:data.hospital
+            hospital:data.hospital,
+            city:data.city
         })
         
         setresponce(docdata)
         console.log(response)
         localStorage.setItem('doctoken', docdata.data.token);
-               console.log(localStorage.token)
-        if(localStorage.token){ 
-          router.push('/createDocProfile')
+               console.log(localStorage.doctoken)
+        if(localStorage.doctoken){ 
+          router.push('/Doctor/createDocProfile')
         }
        
     }catch(err){
@@ -64,7 +66,9 @@ const DocResgistration = () => {
 
   return (
     <div>
+        <h2 className='m-auto text-center text-cyan-500 font-bold'>Doctor Registration</h2>
  <form className='m-2' >
+
  <div className="mb-6">
       <label  htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your name</label>
       <input value={data.name} onChange={(e)=>handlechange(e)} type="text" id="name" name='name' className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" placeholder="Your name " required/>
@@ -78,6 +82,11 @@ const DocResgistration = () => {
     <div className="mb-6">
       <label  htmlFor="number" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your Phone </label>
       <input value={data.phone} onChange={(e)=>handlechange(e)} type="number" id="phone" name='phone' className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" placeholder="name@flowbite.com" required/>
+    </div>
+
+    <div className="mb-6">
+      <label  htmlFor="city" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your city </label>
+      <input value={data.city} onChange={(e)=>handlechange(e)} type="text" id="city" name='city' className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" placeholder="name@flowbite.com" required/>
     </div>
    
 

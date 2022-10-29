@@ -59,11 +59,11 @@ const Navbar = () => {
           </svg>
         </button>
       </div>
-      <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-        <div className="flex flex-shrink-0 items-center">
+     <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+     <Link href={'/'}><div  className="flex flex-shrink-0 items-center">
           <img  style={{marginTop:"-10px"}} className="block h-10 mr-6  lg:hidden lg:m-0 lg:h-0 lg:w-0" src={`/ayumTranparent.png`} alt="Your Company" />
           <img className="hidden h-8 w-auto lg:block" src={`/ayumTranparent.png`} alt="Your Company " />
-        </div>
+        </div></Link> 
         <div className=" hidden   sm:ml-10 md:block sm:block">
           <div className="flex space-x-4">
             {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
@@ -110,8 +110,10 @@ const Navbar = () => {
             <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-0">Your Profile</a>
             <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-1">Settings</a>
             <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-2">Sign out</a>
-          <Link href='/DocRegistr'><a  className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-2">Doctor Registration</a></Link> 
-          <Link href='/DocLogin'><a  className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-2">Doctor Login</a></Link> 
+          <Link href='/Doctor/DocRegistr'><a  className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-2">Doctor Registration</a></Link> 
+          <Link href='/Doctor/DocLogin'><a  className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-2">Doctor Login</a></Link> 
+          <Link href='/User/UserLoginPage'><a  className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-2">User Login</a></Link> 
+          <Link href='/User/UserRegistrationPage'><a  className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-2">User Registration</a></Link> 
           </div>}
         </div>
       </div>

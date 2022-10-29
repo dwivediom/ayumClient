@@ -11,7 +11,7 @@ const DocLogin = () => {
   const router =  useRouter()
    
 
-  const url=`http://localhost:5000/api/doctor/login`; 
+  const url=`${process.env.NEXT_PUBLIC_B_PORT}/api/doctor/login`; 
   const [dataerror, setdataerror]=useState('')
   const [response1, setresponce1]=useState('')
 
@@ -39,7 +39,7 @@ const submit= async (e)=>{
        setresponce1(docdata)
         localStorage.setItem('doctoken', docdata.data.token)
         if(localStorage.doctoken){
-           router.push('/createDocProfile')
+           router.push('/Doctor/createDocProfile')
         }
 
        console.log(response1)
@@ -63,7 +63,10 @@ const  handlechange=(e)=>{
 console.log('error:',dataerror)
  
   return (
-    <div className='lg:w-[60%] m-auto'><form className='m-2'>
+    <div className='lg:w-[60%] m-auto'>
+        <h2 className='m-auto text-center text-cyan-500 font-bold'>Doctor Login </h2>
+      
+      <form className='m-2'>
     <div className="mb-6">
       <label   htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
       <input type="email" onChange={(e)=>handlechange(e)} id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" placeholder="name@flowbite.com" required/>
@@ -82,7 +85,7 @@ console.log('error:',dataerror)
   </form>
    
   
-  { response1.status==200? <h5 className='text-green-500'>Registration success!</h5>:
+  { response1.status==200? <h5 className='text-green-500'>Login success!</h5>:
        
        <h5 className='text-red-600 text-bold'> { dataerror && `check you credentials` } </h5>}
 

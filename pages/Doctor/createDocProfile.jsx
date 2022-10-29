@@ -1,5 +1,5 @@
 import React from 'react'
-import CreateDocProfile from '../components/DocProfile/CreateDocProfile'
+import CreateDocProfile from '../../components/DocProfile/CreateDocProfile'
 
 const createDocProfile = () => {
   return (

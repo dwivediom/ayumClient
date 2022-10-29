@@ -11,7 +11,7 @@ const GetDoctor = () => {
     
     const getDoctor = useSelector((state)=>state.getDoctorReducer)
       
-    console.log(getDoctor)
+   
     useEffect(()=>{
          dispatch(getallDoctorAction())
          
@@ -29,7 +29,7 @@ const GetDoctor = () => {
 
       <div className='  grid  md:grid-cols-2  lg:grid-cols-4 gap-4'>
      {getDoctor.doctor&&  getDoctor.doctor.slice(0).reverse().map((doctor)=>{
-             console.log('doctor',doctor)
+                 console.log(doctor)
            return( <Doctor key={doctor._id} name={doctor.doctor.name} 
             
                         specialist={doctor.specialist}
@@ -37,6 +37,7 @@ const GetDoctor = () => {
                         phone={doctor.doctor.phone}
                         fees={doctor.fees}
                         timing={doctor.timing}
+                        docid={doctor._id}
 
             />)
      })}

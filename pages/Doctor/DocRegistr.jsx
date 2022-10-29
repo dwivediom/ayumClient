@@ -1,5 +1,5 @@
 import React from 'react'
-import DocResgistration from '../components/DocAuth/DocResgistration'
+import DocResgistration from '../../components/DocAuth/DocResgistration'
 
 const DocRegistr = () => {
   return (
