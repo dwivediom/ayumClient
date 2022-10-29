@@ -37,9 +37,9 @@ export const createDocProfileAction = (data) => async (dispatch) => {
   try {
 
     dispatch({ type: POST_DOCTOR_PROFILE })
-          if(localStorage.token){
+          if(localStorage.doctoken){
             //  setAuthToken(localStorage.token)
-             var token = localStorage.token;
+             var token = localStorage.doctoken;
           }
       console.log(data)
     const newdata = await axios({

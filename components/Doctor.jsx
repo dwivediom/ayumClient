@@ -3,7 +3,7 @@ import React from 'react'
 const Doctor = (props) => {
    const {name,specialist , location , fees , phone   ,timing      }=props; 
   return (
-    <div className='mt-4'><div className="p-6 max-w-sm  rounded-lg border border-cyan-700 shadow-md bg-gray-800 light:border-gray-700">
+    <div className='mt-4'><div className="p-6 max-w-sm overflow-hidden rounded-lg border border-cyan-700 shadow-md bg-gray-800 light:border-gray-700">
     <a href="#">
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{name} </h5>
         <h6 className='text-gray-100  border-solid inline p-1 border-cyan-500/40 rounded-full   border-[1px] ' > <span className='m-1' >{specialist}</span> </h6>
