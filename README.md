@@ -3,7 +3,7 @@ this is a beta branch
 please handle carefully 
 ## Getting Starte
 
-edited by om in change branch 
+edited by om 23
 
 
 First, run the development server:
