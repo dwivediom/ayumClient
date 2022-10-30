@@ -23,3 +23,30 @@ import{GET_DOCTOR_FAIL, GET_DOCTOR_REQUEST,GET_DOCTOR_SUCCESS} from '../constant
 
 
 }
+
+
+
+// create doctor profile 
+import { POST_DOCTOR_PROFILE,POST_DOCTOR_PROFILE_FAIL,POST_DOCTOR_PROFILE_SUCCESS } from '../constants/docConstants';
+export const createDocProfileReducer= (state={docProfile:null, profileStatus:false }, action)=>{
+   
+  switch(action.type){ 
+  
+    case POST_DOCTOR_PROFILE: 
+          return ({...state , profileStatus:true} );
+
+
+    case POST_DOCTOR_PROFILE_SUCCESS: 
+           console.log("action.payload",action.payload)
+          return ({...state , profileStatus:true , docProfile: action.payload});      
+    
+    case POST_DOCTOR_PROFILE_FAIL: 
+          return ({
+               ...state , profileStatus:false , error:action.payload
+          })
+
+ default:
+        return state ; 
+  }
+  
+}

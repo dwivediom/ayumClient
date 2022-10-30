@@ -1,9 +1,11 @@
 import { combineReducers } from "redux";
-import { getDoctorReducer } from "../reducers/docReducers";
+import { getDoctorReducer,createDocProfileReducer } from "../reducers/docReducers";
+
 
 // Import all reducers
 
 
 export const rootReducers = combineReducers({
-    getDoctorReducer: getDoctorReducer
+    getDoctorReducer: getDoctorReducer,
+    createDocProfileReducer:createDocProfileReducer
 })

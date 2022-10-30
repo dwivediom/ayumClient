@@ -13,7 +13,6 @@ const DocLogin = () => {
 
   const [data, setdata] = useState({
     email: "",
-
     password: "",
   });
 
