@@ -37,7 +37,8 @@ const GetDoctor = () => {
                         phone={doctor.doctor.phone}
                         fees={doctor.fees}
                         timing={doctor.timing}
-                        docid={doctor._id}
+                        docid={doctor.doctor._id}
+
 
             />)
      })}

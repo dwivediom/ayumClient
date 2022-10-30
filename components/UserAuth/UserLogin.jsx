@@ -6,10 +6,10 @@ import { bgPriColor } from '../theam/theam'
 import { doctorRegister } from '../../pages/api/DoctorApi/DocApi'
 import axios from 'axios'
 import { Port } from '../../pages/api/Mainport'
-
+import { useSelector } from 'react-redux'
 
 const UserLogin = () => {
-
+  const docdata = useSelector((state)=>state.setdocDataReducer)
     const router= useRouter()
     const url=`${process.env.NEXT_PUBLIC_B_PORT}/api/user/login`; 
     const [error, seterror]=useState('')
@@ -37,9 +37,12 @@ const UserLogin = () => {
          setresponce(userdata)
          console.log(response)
          localStorage.setItem('usertoken', userdata.data.token);
-                console.log(localStorage.usertoken)
-         if(localStorage.doctoken){ 
-           router.push('/')
+         
+         if(docdata!=null && localStorage.usertoken  ){
+          router.push('/User/BookAppointmentPage')
+         }else{ 
+          
+          router.push('/')
          }
         
      }catch(err){

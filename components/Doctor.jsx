@@ -1,7 +1,41 @@
 import React from 'react'
+import { useRouter } from 'next/router';
+import { useDispatch } from 'react-redux';
+import { setDocDataAction } from '../redux/actions/userActions';
 
 const Doctor = (props) => {
+   const dispatch = useDispatch()
+   const router = useRouter(); 
    const {name,specialist , location , fees , phone   ,timing , docid     }=props; 
+
+        
+
+   const  Click=(e)=>{ 
+    e.preventDefault() ; 
+
+
+   dispatch(setDocDataAction(props))
+
+
+    if(localStorage.usertoken){ 
+         
+       router.push('/User/BookAppointmentPage')
+    }else{ 
+      router.push('/User/UserLoginPage')
+    }
+
+   }
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div className='mt-4'><div className="p-6 max-w-sm overflow-hidden rounded-lg border border-cyan-700 shadow-md bg-gray-800 light:border-gray-700">
     <a href="#">
@@ -44,7 +78,7 @@ const Doctor = (props) => {
       </div>
  
 
-    <a href="#" className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-cyan-500 rounded-lg hover:bg-cyan-500 focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:bg-cyan-600  hover:bg-cyan-800 dark:focus:ring-cyan-500">
+    <a href="#" onClick={(e)=>Click(e)} className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-cyan-500 rounded-lg hover:bg-cyan-500 focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:bg-cyan-600  hover:bg-cyan-800 dark:focus:ring-cyan-500">
         Book slot
         <svg aria-hidden="true" className="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
     </a>
