@@ -17,7 +17,7 @@ export default function Home() {
         
         <SearchBox/>
         <QuickSearch/>
-      <main className={`${''} m-4`}>
+      <main className={`${''} m-3`}>
        
               
             <GetDoctor/>

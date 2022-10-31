@@ -34,7 +34,7 @@ const CreateDocProfile = () => {
 
      
      if(!data){ 
-       router.push('/DocLogin')
+       router.push('/Doctor/DocLogin')
      }
 
 
