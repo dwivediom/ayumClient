@@ -7,12 +7,15 @@ import axios from "axios";
 const DocLogin = () => {
   const router = useRouter();
 
-  const url = `http://localhost:5000/api/doctor/login`;
+  // const url = `http://localhost:5000/api/doctor/login`;
   const [dataerror, setdataerror] = useState("");
-  const [response1, setresponce1] = useState("");
+  const [response1, setresponse1] = useState("");
+
+  const url = `${process.env.NEXT_PUBLIC_B_PORT}/api/doctor/login`;
 
   const [data, setdata] = useState({
     email: "",
+
     password: "",
   });
 
@@ -25,9 +28,11 @@ const DocLogin = () => {
         password: data.password,
       });
 
-      setresponce1(docdata);
-      if (docdata.status == 200) {
-        router.push("/createDocProfile");
+      setresponse1(docdata);
+      console.log(response1, "yeh hai response1");
+      localStorage.setItem("doctoken", docdata.data.token);
+      if (localStorage.doctoken) {
+        router.push("/Doctor/createDocProfile");
       }
 
       console.log(response1);
@@ -47,6 +52,10 @@ const DocLogin = () => {
 
   return (
     <div className="lg:w-[60%] m-auto">
+      <h2 className="m-auto text-center text-cyan-500 font-bold">
+        Doctor Login{" "}
+      </h2>
+
       <form className="m-2">
         <div className="mb-6">
           <label
@@ -106,6 +115,15 @@ const DocLogin = () => {
       </form>
 
       {response1.status == 200 ? (
+        <h5 className="text-green-500">Login success!</h5>
+      ) : (
+        <h5 className="text-red-600 text-bold">
+          {" "}
+          {dataerror && `check you credentials`}{" "}
+        </h5>
+      )}
+
+      {response1.status == 200 ? (
         <h5 className="text-green-500">Registration success!</h5>
       ) : (
         <h5 className="text-red-600 text-bold">
@@ -116,9 +134,9 @@ const DocLogin = () => {
 
       <h6 className="text-white mt-6 ml-2">
         {" "}
-        If you are Rgistred please go to{" "}
+        If you Already have account
         <Link href="/DocRegistr">
-          <a className="text-sky-500"> Registration page</a>
+          <a className="text-cyan-400"> Login</a>
         </Link>
       </h6>
     </div>

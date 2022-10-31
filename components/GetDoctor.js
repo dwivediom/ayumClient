@@ -5,10 +5,12 @@ import React, {
   useState,
   memo,
 } from "react";
+import styles from "../styles/doctorcard.module.css";
+
 import { useDispatch, useSelector } from "../redux/store/store";
 import { getallDoctorAction } from "../redux/actions/docActions";
 import { bgPriColor } from "./theam/theam";
-import Doctor from "./Doctor";
+import DoctorCard from "./DoctorCard";
 
 const GetDoctor = () => {
   const [doctorData, setDoctorData] = useState("");
@@ -16,8 +18,8 @@ const GetDoctor = () => {
   const dispatch = useDispatch();
 
   const getDoctor = useSelector((state) => state.getDoctorReducer);
+  console.log(getDoctor && getDoctor);
 
-  console.log(getDoctor);
   useEffect(() => {
     dispatch(getallDoctorAction());
   }, [dispatch]);
@@ -28,15 +30,15 @@ const GetDoctor = () => {
 
   return (
     <>
-      <div className="  grid  md:grid-cols-2  lg:grid-cols-4 gap-4">
+      <div className={`${styles.doc_container}`}>
         {getDoctor.doctor &&
           getDoctor.doctor
             .slice(0)
             .reverse()
             .map((doctor) => {
-              console.log("doctor", doctor);
+              console.log(doctor);
               return (
-                <Doctor
+                <DoctorCard
                   key={doctor._id}
                   name={doctor.doctor.name}
                   specialist={doctor.specialist}
@@ -44,6 +46,7 @@ const GetDoctor = () => {
                   phone={doctor.doctor.phone}
                   fees={doctor.fees}
                   timing={doctor.timing}
+                  docid={doctor.doctor._id}
                 />
               );
             })}

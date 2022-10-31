@@ -1,6 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+this is a beta branch 
 
-## Getting Started
+please handle carefully 
+## Getting Starte
+
+edited by om in change branch 
+
 
 First, run the development server:
 

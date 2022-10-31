@@ -44,7 +44,7 @@ export const createDocProfileAction = (data) => async (dispatch) => {
       //  setAuthToken(localStorage.token)
       var token = localStorage.doctoken;
     }
-    console.log(data);
+    console.log(data, token);
     const newdata = await axios({
       url: createDocProfile,
       method: "post",
