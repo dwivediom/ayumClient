@@ -1,12 +1,13 @@
-import React from "react";
-import CreateDocProfile from "../../components/DocProfile/CreateDocProfile";
+import React from 'react'
+import CreateDocProfile from '../../components/DocProfile/CreateDocProfile'
 
 const createDocProfile = () => {
   return (
-    <>
-      <CreateDocProfile />
-    </>
-  );
-};
+   <>
+   <CreateDocProfile/>
+   
+   </>
+  )
+}
 
-export default createDocProfile;
+export default createDocProfile
