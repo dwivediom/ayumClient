@@ -25,17 +25,6 @@ const Doctor = (props) => {
     }
 
    }
-
-
-
-
-
-
-
-
-
-
-
   return (
     <div  className='mt-1'><div className="p-4 max-w-sm   break-normal  rounded-lg border   border-cyan-700 shadow-md bg-gray-800 light:border-gray-700">
     <a href="#" className=''>

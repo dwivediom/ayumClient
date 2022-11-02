@@ -110,10 +110,10 @@ const Navbar = () => {
             <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-0">Your Profile</a>
             <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-1">Settings</a>
             <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-2">Sign out</a>
-          <Link href='/Doctor/DocRegistr'><a  className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-2">Doctor Registration</a></Link> 
-          <Link href='/Doctor/DocLogin'><a  className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-2">Doctor Login</a></Link> 
-          <Link href='/User/UserLoginPage'><a  className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-2">User Login</a></Link> 
-          <Link href='/User/UserRegistrationPage'><a  className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-2">User Registration</a></Link> 
+          <Link href='/Doctor/DocRegistr'><a  className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-2">Doctor Login/Registration</a></Link> 
+          {/* <Link href='/Doctor/DocLogin'><a  className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-2">Doctor Login</a></Link>  */}
+          <Link href='/User/UserRegistrationPage'><a  className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-2">User Login/Registration</a></Link> 
+
           </div>}
         </div>
       </div>

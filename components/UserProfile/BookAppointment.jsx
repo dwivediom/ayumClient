@@ -25,10 +25,12 @@ const BookAppointment = () => {
    })
  
 useEffect(()=>{
-    if(docdata==''){ 
+   console.log(docdata)
+    if(docdata.docdata==null){ 
       router.push('/')
+      return
     }
-    
+   
     setdoctordata(docdata.docdata)
      
       
@@ -121,7 +123,7 @@ const url=`${process.env.NEXT_PUBLIC_B_PORT}/api/appointment/${doctordata.docid}
           }): error  }</h5>}
   
   
-    <h6  className='text-white mt-6 ml-2'> If you are Rgistred please go to  <Link href="/DocRegistr"><a className='text-sky-500'> Registration page</a></Link></h6>
+    <h6  className='text-white mt-6 ml-2'> If you are Rgistred please go to  <Link href="/User/UserRegistration"><a className='text-sky-500'> Registration page</a></Link></h6>
     </div>
   
   
