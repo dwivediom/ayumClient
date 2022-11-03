@@ -4,7 +4,7 @@
 .maindiv div{
     /* background: rgba(255, 0, 0, 0.6);     */
     
-    box-shadow: 0 8px 32px 0 rgba(74, 182, 206, 0.37);
+   
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;

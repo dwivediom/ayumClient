@@ -38,7 +38,7 @@ useEffect(()=>{
         const usertoken = localStorage.getItem('usertoken')
         settoken(usertoken)
     }else{
-        router.push('/User/UserLoginPage')
+        router.push('/User/UserRegistrationPage')
     }
 
      
@@ -68,7 +68,9 @@ const url=`${process.env.NEXT_PUBLIC_B_PORT}/api/appointment/${doctordata.docid}
          
          setresponce(userdata)
          console.log(response)
-        
+          if(userdata){ 
+             router.push('/User/userAppo')
+          }
          
          
         

@@ -263,7 +263,7 @@ const DocRegistr = () => {
             return (`${data.msg}!!`)
           }) : error}</h5>}
 
-        <h6 className='text-white mt-6 ml-2'> If you are Rgistred please go to  <Link href="/DocLogin"><a className='text-sky-500'>Login page</a></Link></h6>
+      
       </div>
 
       <div id='sign-in-button'></div>

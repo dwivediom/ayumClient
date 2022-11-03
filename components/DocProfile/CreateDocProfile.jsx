@@ -6,6 +6,8 @@ import { createDocProfileAction } from '../../redux/actions/docActions';
 import setAuthToken from '../../utils/setauthtoken';
  
 const CreateDocProfile = () => {
+ const Docdata = useSelector((state)=>state.createDocProfileReducer)
+
     const router = useRouter(); 
  const [token , settoken ]= useState('')
  const  [profile , setprofile ]=useState({
@@ -34,7 +36,7 @@ const CreateDocProfile = () => {
 
      
      if(!data){ 
-       router.push('/Doctor/DocLogin')
+       router.push('/Doctor/DocRegistr')
      }
 
 
@@ -46,6 +48,9 @@ const CreateDocProfile = () => {
     e.preventDefault();
     dispatch(createDocProfileAction(profile))
     console.log(postprofile && postprofile)
+    setTimeout(() => {
+     if(Docdata) {router.push('/')}
+    }, 1000);
   }
 
 
@@ -65,18 +70,18 @@ const CreateDocProfile = () => {
            <h2 className='m-auto text-center text-cyan-500 font-bold'>Update profile </h2>
 <form className=' lg:w-[60%]  m-auto'>
     <div className="mb-6">
-      <label   htmlFor="clinic" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your clinic/hospital</label>
+      <label   htmlFor="clinic" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your clinic/hospital <span className='text-red-600'> *</span></label>
       <input type="text" onChange={(e)=>handlechange(e)} id="clinic" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" placeholder="Ayum clinic/hospital" />
     </div>
 
     <div className="mb-6">
-      <label   htmlFor="location" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">location</label>
+      <label   htmlFor="location" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">location<span className='text-red-600'> *</span></label>
       <input type="text"onChange={(e)=>handlechange(e)} id="location" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" required/>
     </div>
 
       
       <div className="mb-6">
-      <label   htmlFor="timing" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">timing </label>
+      <label   htmlFor="timing" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">timing <span className='text-red-600'> *</span></label>
       <input type="text" onChange={(e)=>handlechange(e)} id="timing" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" placeholder="from 10 A.M to 3P.M " required/>
     </div>
 
@@ -85,7 +90,7 @@ const CreateDocProfile = () => {
       <input type="text"onChange={(e)=>handlechange(e)} id="status" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" placeholder='HOD / MD' required/>
     </div>
     <div className="mb-6">
-      <label   htmlFor="specialist" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"> specialist</label>
+      <label   htmlFor="specialist" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"> specialist <span className='text-red-600'> *</span></label>
       <input type="text"onChange={(e)=>handlechange(e)} id="specialist" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" required/>
     </div>
     <div className="mb-6">

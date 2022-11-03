@@ -1,10 +1,19 @@
 import React from 'react'
 import styles from "../styles/search.module.css"
+import { useRouter } from 'next/router'
 import { bgSecColor, bgPriColor } from './theam/theam'
 
+
+
 const SearchBox = () => {
+  const router = useRouter()
+
+  const clickserch=()=>{
+     router.push('/Search/Search')
+  }
+
   return (
-     <div className='m-4'>
+     <div className='m-4' onClick={()=>clickserch()}>
     <form>   
     <label  htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
     <div className="relative">

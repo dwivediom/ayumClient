@@ -6,7 +6,7 @@ const BottomNav = () => {
     <>
     <div className="w-full h-screen ">
 	{/* <!-- <section id="bottom-navigation" className="md:hidden block fixed inset-x-0 bottom-0 z-10 bg-white shadow"> // if shown only tablet/mobile--> */}
-	<section id="bottom-navigation" className="lg:hidden  gird grid-cols-5   text-white block fixed  inset-x-0 bottom-0 z-10 bg-gray-700 shadow">
+	<section id="bottom-navigation" className="  gird grid-cols-5   text-white block fixed  inset-x-0 bottom-0 z-10 bg-gray-700 shadow">
 		<div id="tabs" className="flex justify-between">
 			<Link href={'/'}><a  className="w-full focus:text-cyan-500 hover:text-cyan-500 justify-center inline-block text-center pt-2 pb-1">
 				<svg width="25" height="25" viewBox="0 0 42 42" className="inline-block mb-1">
@@ -20,7 +20,7 @@ const BottomNav = () => {
 				</svg>
 				<span className="tab tab-home text-white block text-xs">Home</span>
 			</a></Link>
-			<Link href={'/'}><a className="w-full focus:text-cyan-500 hover:text-cyan-500 justify-center inline-block text-center pt-2 pb-1">
+			<Link href={'/Category/Category'}><a className="w-full focus:text-cyan-500 hover:text-cyan-500 justify-center inline-block text-center pt-2 pb-1">
 				<svg width="25" height="25" viewBox="0 0 42 42" className="inline-block mb-1">
 			    <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
 		        <path d="M14.7118754,20.0876892 L8.03575361,20.0876892 C5.82661462,20.0876892 4.03575361,18.2968282 4.03575361,16.0876892 L4.03575361,12.031922 C4.03575361,8.1480343 6.79157254,4.90780265 10.4544842,4.15995321 C8.87553278,8.5612583 8.1226025,14.3600511 10.9452499,15.5413938 C13.710306,16.6986332 14.5947501,18.3118357 14.7118754,20.0876892 Z M14.2420017,23.8186831 C13.515543,27.1052019 12.7414284,30.2811559 18.0438552,31.7330419 L18.0438552,33.4450645 C18.0438552,35.6542035 16.2529942,37.4450645 14.0438552,37.4450645 L9.90612103,37.4450645 C6.14196811,37.4450645 3.09051926,34.3936157 3.09051926,30.6294627 L3.09051926,27.813861 C3.09051926,25.604722 4.88138026,23.813861 7.09051926,23.813861 L14.0438552,23.813861 C14.1102948,23.813861 14.1763561,23.8154808 14.2420017,23.8186831 Z M20.7553776,32.160536 C23.9336213,32.1190063 23.9061943,29.4103976 33.8698747,31.1666916 C34.7935223,31.3295026 35.9925894,31.0627305 37.3154077,30.4407183 C37.09778,34.8980343 33.4149547,38.4450645 28.9036761,38.4450645 C24.9909035,38.4450645 21.701346,35.7767637 20.7553776,32.160536 Z" fill="currentColor" opacity="0.1"></path>
@@ -35,7 +35,7 @@ const BottomNav = () => {
 				</svg>
 				<span className="tab tab-kategori block text-xs">Category</span>
 			</a></Link>
-			<Link href={''}><a className="w-full focus:text-cyan-500 hover:text-cyan-500 justify-center inline-block text-center pt-2 pb-1">
+			<Link href={'/Search/Search'}><a className="w-full focus:text-cyan-500 hover:text-cyan-500 justify-center inline-block text-center pt-2 pb-1">
 			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=" text-center inline w-6  h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
 </svg>

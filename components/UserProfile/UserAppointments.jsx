@@ -70,6 +70,7 @@ const UserAppointments = () => {
                 return(<>
                     
                     <Appointment
+                         key={data._id}
                          docname={data.docname}
                          age={data.age}
                          appointmentno={data.appointmentno}

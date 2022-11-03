@@ -33,7 +33,7 @@ const GetDoctor = () => {
       <div className='  md:grid m-auto  overflow-hidden md:grid-cols-2  lg:grid-cols-4  gap-3'>
       {/* <div className={`${styles.doc_container}`} > */}
      {getDoctor.doctor&&  getDoctor.doctor.slice(0).reverse().map((doctor)=>{
-                 console.log(doctor)
+            
            return( <Doctor key={doctor._id} name={doctor.doctor.name} 
             
                         specialist={doctor.specialist}
