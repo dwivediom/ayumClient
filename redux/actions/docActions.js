@@ -30,9 +30,10 @@ export const getallDoctorAction = () => async (dispatch) => {
 
 
 //create profile 
-import { createDocProfile } from "../../pages/api/DoctorApi/DocApi";
+
 import { POST_DOCTOR_PROFILE, POST_DOCTOR_PROFILE_FAIL, POST_DOCTOR_PROFILE_SUCCESS } from "../constants/docConstants";
 import setAuthToken from "../../utils/setauthtoken";
+const createDocProfile=`${process.env.NEXT_PUBLIC_B_PORT}/api/profile/createprofile`
 export const createDocProfileAction = (data) => async (dispatch) => {
   try {
 
