@@ -1,5 +1,32 @@
 {
+    
+"shortcuts": [
+  {
+    "name": "Book Session",
+    "short_name": "Book Session",
+    "description": "Book you appointment in one click ",
+    "url": "/",
+    "icons": [
+      {
+        "src": "https://pwabuilder.com/assets/icons/icon_192.png",
+        "sizes": "192x192"
+      }
+    ]
+  }
+], 
+"related_applications": [{
+    "platform": "play",
+    "url": "https://play.google.com/store/search?q=practo&c=apps&hl=en_IN&gl=US"
+  }],
     "theme_color": "#35ecf6",
+    "screenshots": [
+        {
+            "src":"/screenshot.JPEG",
+            "sizes":"1440 x 2960",
+            "type":"JPEG",
+            "description":"home screen"
+        }
+    ],
     "background_color": "#f6f2ee",
     "display": "standalone",
     "scope": "/",
