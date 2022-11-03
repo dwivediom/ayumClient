@@ -25,7 +25,7 @@ const DocAppointment = () => {
    
    if(!localStorage.doctoken){
     
-    router.push('/Doctor/DocLogin')
+    router.push('/Doctor/DocRegistr')
        console.log("its not worikng ")
   }
   },[])
